@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Midnight-Dark Theme (Primary Persona) -->
+    <style name="Base.Theme.Teleprompter" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/electric_blue</item>
+        <item name="colorPrimaryVariant">@color/electric_blue_dark</item>
+        <item name="colorOnPrimary">#001824</item>
+        <item name="colorSecondary">@color/electric_cyan</item>
+        <item name="colorOnSecondary">#001824</item>
+        <item name="android:colorBackground">@color/midnight_bg</item>
+        <item name="colorSurface">@color/midnight_surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/midnight_surface_card</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorOutline">@color/midnight_border</item>
+        <item name="android:statusBarColor">@color/midnight_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/midnight_bg</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+
+        <!-- Rounded Shape Appearance -->
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.Teleprompter.MediumComponent</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.Teleprompter.LargeComponent</item>
+    </style>
+</resources>

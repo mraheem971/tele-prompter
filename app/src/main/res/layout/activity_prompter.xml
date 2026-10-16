@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/prompterRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/prompter_bg_pure"
+    android:keepScreenOn="true">
+
+    <!-- Prompter Reading Scroll Container -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/prompterScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <!-- Mirror Transformation Container (scaleX / scaleY applied here) -->
+        <FrameLayout
+            android:id="@+id/prompterMirrorContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Width Adjusting Margin Container -->
+            <LinearLayout
+                android:id="@+id/prompterMarginContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:paddingTop="260dp"
+                android:paddingBottom="450dp">
+
+                <TextView
+                    android:id="@+id/tvPrompterContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/prompter_text_white"
+                    android:textSize="34sp"
+                    android:lineSpacingMultiplier="1.4"
+                    android:textStyle="normal"
+                    tools:text="Welcome to TelePrompt Pro. This is your distraction-free teleprompter reading view..." />
+
+                <TextView
+                    android:id="@+id/tvPrompterEnd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:gravity="center"
+                    android:text="@string/prompter_reading_complete"
+                    android:textColor="@color/text_tertiary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Reading Guide Focus Line (Anchored in the upper-third of screen) -->
+    <FrameLayout
+        android:id="@+id/layoutGuideLine"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="220dp"
+        android:background="@drawable/bg_guide_band"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <!-- Top Minimal Status Bar -->
+    <LinearLayout
+        android:id="@+id/prompterTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#99000000">
+
+        <ImageButton
+            android:id="@+id/btnPrompterClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/dialog_close"
+            android:src="@drawable/ic_close"
+            app:tint="@color/text_primary" />
+
+        <TextView
+            android:id="@+id/tvPrompterTitle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:ellipsize="end"
+            tools:text="Presentation Title" />
+
+        <TextView
+            android:id="@+id/tvPrompterTapHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prompter_tap_to_toggle_hud"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- Floating Prompter Control HUD (Bottom) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/prompterHudCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="10dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/midnight_border"
+        app:cardBackgroundColor="#E60F172A">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Primary Playback Controls Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Rewind 5s -->
+                <ImageButton
+                    android:id="@+id/btnPrompterRewind"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Rewind"
+                    android:src="@drawable/ic_fast_rewind"
+                    app:tint="@color/text_primary" />
+
+                <!-- Speed Down (-) -->
+                <ImageButton
+                    android:id="@+id/btnPrompterSpeedDown"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Slower"
+                    android:src="@drawable/ic_speed"
+                    app:tint="@color/text_secondary" />
+
+                <!-- Speed Text -->
+                <TextView
+                    android:id="@+id/tvPrompterSpeedLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3x"
+                    android:textColor="@color/electric_blue"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp" />
+
+                <!-- Speed Up (+) -->
+                <ImageButton
+                    android:id="@+id/btnPrompterSpeedUp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Faster"
+                    android:src="@drawable/ic_add"
+                    app:tint="@color/text_secondary" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="1dp" />
+
+                <!-- BIG PLAY / PAUSE BUTTON -->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabPrompterPlayPause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/prompter_play"
+                    android:src="@drawable/ic_play"
+                    app:backgroundTint="@color/electric_blue"
+                    app:tint="#001824"
+                    app:elevation="4dp"
+                    app:fabSize="normal" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="1dp" />
+
+                <!-- Restart / Top -->
+                <ImageButton
+                    android:id="@+id/btnPrompterRestart"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/prompter_restart"
+                    android:src="@drawable/ic_restart"
+                    app:tint="@color/text_primary" />
+
+                <!-- Display & Typography Settings -->
+                <ImageButton
+                    android:id="@+id/btnPrompterSettings"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/prompter_customization"
+                    android:src="@drawable/ic_tune"
+                    app:tint="@color/electric_blue" />
+            </LinearLayout>
+
+            <!-- Secondary Quick Toggles Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!-- Mirror Horizontal Toggle -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToggleMirrorH"
+                    style="@style/Widget.Teleprompter.Button.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:text="@string/prompter_mirror_horizontal"
+                    android:textSize="11sp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:layout_marginEnd="6dp"
+                    app:icon="@drawable/ic_flip_horizontal"
+                    app:iconSize="14dp" />
+
+                <!-- Guide Line Toggle -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToggleGuideLine"
+                    style="@style/Widget.Teleprompter.Button.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:text="@string/prompter_guide_line"
+                    android:textSize="11sp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    app:icon="@drawable/ic_visibility"
+                    app:iconSize="14dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Animated Countdown Overlay (3, 2, 1, GO!) -->
+    <FrameLayout
+        android:id="@+id/layoutCountdownOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvCountdownNumber"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_countdown_circle"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/electric_blue"
+            android:textSize="64sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

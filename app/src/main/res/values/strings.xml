@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TelePrompt Pro</string>
+    <string name="app_tagline">Studio-Grade Teleprompter &amp; Video Recorder</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_dashboard">Home</string>
+    <string name="nav_library">Scripts</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_welcome">Welcome back</string>
+    <string name="dashboard_subtitle">Ready to deliver your next great talk?</string>
+    <string name="dashboard_quick_start">Quick Actions</string>
+    <string name="dashboard_quick_prompt">Teleprompter Only</string>
+    <string name="dashboard_quick_prompt_desc">Distraction-free speech reading</string>
+    <string name="dashboard_quick_record">Record Video</string>
+    <string name="dashboard_quick_record_desc">CameraX overlay prompter</string>
+    <string name="dashboard_recent_scripts">Recent Scripts</string>
+    <string name="dashboard_templates">Script Templates</string>
+    <string name="dashboard_view_all">View All</string>
+    <string name="stat_scripts">Scripts</string>
+    <string name="stat_words">Words</string>
+    <string name="stat_est_time">Est. Speech</string>
+
+    <!-- Script Library -->
+    <string name="library_title">Script Library</string>
+    <string name="library_search_hint">Search scripts, tags, topics…</string>
+    <string name="category_all">All</string>
+    <string name="category_youtube">YouTube</string>
+    <string name="category_presentation">Keynote</string>
+    <string name="category_pitch">Pitch</string>
+    <string name="category_reels">Shorts / Reels</string>
+    <string name="category_interview">Interview</string>
+    <string name="category_general">General</string>
+
+    <string name="empty_scripts_title">No scripts found</string>
+    <string name="empty_scripts_desc">Create your first script or start from a professional template to begin practicing!</string>
+    <string name="btn_create_script">Create Script</string>
+    <string name="btn_use_template">Use Template</string>
+
+    <!-- Script Item Actions -->
+    <string name="action_prompt">Prompt</string>
+    <string name="action_record">Record</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_duplicate">Duplicate</string>
+    <string name="action_share">Share</string>
+    <string name="action_delete">Delete</string>
+    <string name="delete_script_confirm">Are you sure you want to delete \"%1$s\"?</string>
+
+    <!-- Script Editor -->
+    <string name="editor_title_new">New Script</string>
+    <string name="editor_title_edit">Edit Script</string>
+    <string name="editor_field_title">Script Title</string>
+    <string name="editor_field_title_hint">E.g., Product Launch Keynote 2026</string>
+    <string name="editor_field_category">Category</string>
+    <string name="editor_field_content">Script Content</string>
+    <string name="editor_field_content_hint">Write or paste your presentation text here…</string>
+    <string name="editor_word_stats">%1$d words • ~%2$s</string>
+    <string name="editor_insert_cue">[CUE / PAUSE]</string>
+    <string name="editor_insert_bullet">• </string>
+    <string name="editor_save">Save</string>
+    <string name="editor_validation_title">Please enter a script title.</string>
+    <string name="editor_validation_content">Please enter script content.</string>
+    <string name="editor_saved_success">Script saved successfully!</string>
+
+    <!-- Prompter Reading Screen -->
+    <string name="prompter_ready">Ready</string>
+    <string name="prompter_play">Play</string>
+    <string name="prompter_pause">Pause</string>
+    <string name="prompter_restart">Top</string>
+    <string name="prompter_speed">Speed: %1$dx</string>
+    <string name="prompter_font_size">Font Size: %1$dsp</string>
+    <string name="prompter_line_spacing">Line Height</string>
+    <string name="prompter_reading_width">Reading Width</string>
+    <string name="prompter_mirror_horizontal">Mirror Horizontal</string>
+    <string name="prompter_mirror_vertical">Mirror Vertical</string>
+    <string name="prompter_guide_line">Reading Guide Band</string>
+    <string name="prompter_countdown">Countdown Timer</string>
+    <string name="prompter_customization">Display &amp; Font Controls</string>
+    <string name="prompter_reading_complete">Script Finished!</string>
+    <string name="prompter_tap_to_toggle_hud">Tap screen to show/hide controls</string>
+
+    <!-- Camera Recording Screen -->
+    <string name="camera_screen_title">Studio Video Recorder</string>
+    <string name="camera_recording">REC</string>
+    <string name="camera_start_record">Record</string>
+    <string name="camera_stop_record">Stop</string>
+    <string name="camera_flip">Flip Camera</string>
+    <string name="camera_torch">Torch</string>
+    <string name="camera_transparency">Overlay Opacity</string>
+    <string name="camera_prompter_position">Prompter Width / Focus</string>
+    <string name="camera_permission_required">Camera and Microphone permissions are required to record video with prompter overlay.</string>
+    <string name="camera_permission_grant">Grant Permissions</string>
+    <string name="camera_recording_saved">Video recording saved!</string>
+    <string name="camera_recording_failed">Recording failed: %1$s</string>
+
+    <!-- Video Preview Screen -->
+    <string name="preview_title">Recording Preview</string>
+    <string name="preview_btn_share">Share Video</string>
+    <string name="preview_btn_gallery">Save to Gallery</string>
+    <string name="preview_btn_retake">Retake</string>
+    <string name="preview_saved_gallery">Video saved to your device Movies folder!</string>
+    <string name="preview_info_duration">Duration: %1$s</string>
+    <string name="preview_info_size">Size: %1$s</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_section_appearance">Appearance &amp; Theme</string>
+    <string name="settings_theme_label">App Theme</string>
+    <string name="settings_theme_dark">Midnight Dark (Default)</string>
+    <string name="settings_theme_light">Modern Light</string>
+    <string name="settings_theme_system">Follow System</string>
+
+    <string name="settings_section_prompter">Teleprompter Defaults</string>
+    <string name="settings_default_speed">Default Scroll Speed</string>
+    <string name="settings_default_font_size">Default Font Size</string>
+    <string name="settings_countdown_duration">Start Countdown</string>
+    <string name="countdown_0">No Countdown</string>
+    <string name="countdown_3">3 Seconds</string>
+    <string name="countdown_5">5 Seconds</string>
+    <string name="countdown_10">10 Seconds</string>
+    <string name="settings_default_mirror">Default Mirror Mode</string>
+    <string name="settings_guide_line">Enable Reading Focus Line</string>
+    <string name="settings_volume_keys">Use Volume Keys to Control Speed / Play</string>
+
+    <string name="settings_section_camera">Camera &amp; Video</string>
+    <string name="settings_camera_quality">Video Quality</string>
+    <string name="settings_camera_quality_fhd">Full HD (1080p)</string>
+    <string name="settings_camera_quality_hd">HD (720p)</string>
+    <string name="settings_camera_quality_sd">SD (480p)</string>
+
+    <string name="settings_section_about">About</string>
+    <string name="settings_about_desc">TelePrompt Pro is an offline-first, professional teleprompter and studio camera recorder engineered for creators, keynote speakers, journalists, and educators.</string>
+    <string name="settings_version">Version 1.0.0 (Offline-First)</string>
+
+    <!-- Common -->
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_confirm">Confirm</string>
+    <string name="dialog_close">Close</string>
+    <string name="dialog_save">Save</string>
+    <string name="dialog_delete">Delete</string>
+</resources>

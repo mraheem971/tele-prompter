@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Top divider border line -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/midnight_border" />
+        </shape>
+    </item>
+    <!-- Background surface inset 1dp from top -->
+    <item android:top="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/midnight_surface" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,65 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.secure.pro.tele_prompter'
+    compileSdk {
+        version = release(37)
+    }
+
+    defaultConfig {
+        applicationId "com.secure.pro.tele_prompter"
+        minSdk 24
+        targetSdk 37
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            optimization {
+                enable false
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation libs.activity.ktx
+    implementation libs.appcompat
+    implementation libs.constraintlayout
+    implementation libs.material
+
+    // Architecture Components: Lifecycle, ViewModel, LiveData
+    implementation libs.lifecycle.viewmodel
+    implementation libs.lifecycle.livedata
+
+    // CameraX video recording and preview
+    implementation libs.camera.core
+    implementation libs.camera.camera2
+    implementation libs.camera.lifecycle
+    implementation libs.camera.video
+    implementation libs.camera.view
+
+    // Room Database
+    implementation libs.room.runtime
+    annotationProcessor libs.room.compiler
+
+    // Guava for ListenableFuture with CameraX
+    implementation libs.guava
+
+    testImplementation libs.junit
+    androidTestImplementation libs.espresso.core
+    androidTestImplementation libs.ext.junit
+}

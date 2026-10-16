@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Drag Handle Indicator -->
+    <View
+        android:layout_width="36dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_pill_badge" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prompter_customization"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- 1. Font Size Slider -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/prompter_font_size"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvSheetFontSizeVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="34sp"
+            android:textColor="@color/electric_blue"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderSheetFontSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:valueFrom="18.0"
+        android:valueTo="72.0"
+        android:stepSize="2.0"
+        android:value="34.0"
+        app:thumbColor="@color/electric_blue"
+        app:trackColorActive="@color/electric_blue"
+        app:trackColorInactive="@color/midnight_surface_elevated" />
+
+    <!-- 2. Line Spacing Slider -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/prompter_line_spacing"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvSheetLineSpacingVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.4x"
+            android:textColor="@color/electric_blue"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderSheetLineSpacing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:valueFrom="1.0"
+        android:valueTo="2.4"
+        android:stepSize="0.2"
+        android:value="1.4"
+        app:thumbColor="@color/electric_blue"
+        app:trackColorActive="@color/electric_blue"
+        app:trackColorInactive="@color/midnight_surface_elevated" />
+
+    <!-- 3. Reading Width / Eye Line Focus Margin -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/prompter_reading_width"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvSheetWidthVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90%"
+            android:textColor="@color/electric_blue"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderSheetWidth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:valueFrom="40.0"
+        android:valueTo="100.0"
+        android:stepSize="5.0"
+        android:value="90.0"
+        app:thumbColor="@color/electric_blue"
+        app:trackColorActive="@color/electric_blue"
+        app:trackColorInactive="@color/midnight_surface_elevated" />
+
+    <!-- 4. Text Color Palette Picker -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Text Color"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnColorWhite"
+            style="@style/Widget.Teleprompter.Button.Secondary"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="38dp"
+            android:text="White"
+            android:textColor="@color/white"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnColorCyan"
+            style="@style/Widget.Teleprompter.Button.Secondary"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="38dp"
+            android:text="Cyan"
+            android:textColor="@color/prompter_text_cyan"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnColorYellow"
+            style="@style/Widget.Teleprompter.Button.Secondary"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="38dp"
+            android:text="Yellow"
+            android:textColor="@color/prompter_text_yellow"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnColorGreen"
+            style="@style/Widget.Teleprompter.Button.Secondary"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="38dp"
+            android:text="Green"
+            android:textColor="@color/prompter_text_green" />
+    </LinearLayout>
+
+    <!-- Switches: Horizontal Mirror, Vertical Mirror, Focus Line -->
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switchSheetMirrorH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/prompter_mirror_horizontal"
+        android:textColor="@color/text_primary" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switchSheetMirrorV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/prompter_mirror_vertical"
+        android:textColor="@color/text_primary" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSheetDismiss"
+        style="@style/Widget.Teleprompter.Button.Electric"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/dialog_close" />
+
+</LinearLayout>

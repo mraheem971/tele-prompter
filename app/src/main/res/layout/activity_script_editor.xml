@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/midnight_bg"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Top Bar -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/editorToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/midnight_surface"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="@color/text_primary"
+            app:title="@string/editor_title_new"
+            app:titleTextColor="@color/text_primary">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingEnd="12dp">
+
+                <!-- Template Picker Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLoadTemplate"
+                    style="@style/Widget.Teleprompter.Button.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="@string/dashboard_templates"
+                    android:textSize="11sp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:icon="@drawable/ic_template"
+                    app:iconSize="14dp" />
+
+                <!-- Save Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveScript"
+                    style="@style/Widget.Teleprompter.Button.Electric"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="@string/editor_save"
+                    android:textSize="12sp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    app:icon="@drawable/ic_check"
+                    app:iconSize="14dp" />
+            </LinearLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <!-- Scrollable Editor Body -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title Input Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/midnight_border"
+                    app:cardBackgroundColor="@color/midnight_surface_card">
+
+                    <EditText
+                        android:id="@+id/etScriptTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="@string/editor_field_title_hint"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:padding="16dp"
+                        android:maxLines="2" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Category Chips Selection -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/editor_field_category"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:layout_marginTop="6dp">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupEditorCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        app:selectionRequired="true">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipEditorGeneral"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/category_general" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipEditorYouTube"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/category_youtube" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipEditorKeynote"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/category_presentation" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipEditorPitch"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/category_pitch" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipEditorReels"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/category_reels" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipEditorInterview"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/category_interview" />
+                    </com.google.android.material.chip.ChipGroup>
+                </HorizontalScrollView>
+
+                <!-- Metrics & Speaking Duration Banner -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_pill_badge"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_timer"
+                        app:tint="@color/electric_blue" />
+
+                    <TextView
+                        android:id="@+id/tvEditorMetrics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/electric_cyan"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        tools:text="0 words • ~0s estimated speaking time" />
+                </LinearLayout>
+
+                <!-- Formatting Assist Toolbar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnInsertCue"
+                        style="@style/Widget.Teleprompter.Button.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="34dp"
+                        android:text="@string/editor_insert_cue"
+                        android:textSize="10sp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:layout_marginEnd="6dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnInsertBullet"
+                        style="@style/Widget.Teleprompter.Button.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="34dp"
+                        android:text="@string/editor_insert_bullet"
+                        android:textSize="10sp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:layout_marginEnd="6dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnClearContent"
+                        style="@style/Widget.Teleprompter.Button.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="34dp"
+                        android:text="Clear"
+                        android:textSize="10sp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp" />
+                </LinearLayout>
+
+                <!-- Script Content Text Input -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/midnight_border"
+                    app:cardBackgroundColor="@color/midnight_surface_card">
+
+                    <EditText
+                        android:id="@+id/etScriptContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minLines="12"
+                        android:gravity="top|start"
+                        android:background="@null"
+                        android:hint="@string/editor_field_content_hint"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="16sp"
+                        android:lineSpacingExtra="4dp"
+                        android:padding="16dp" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- Sticky Bottom Launch Bar (Prompt & Record) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="8dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/midnight_border"
+            app:cardBackgroundColor="@color/midnight_surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <!-- Quick Prompt Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBottomPrompt"
+                    style="@style/Widget.Teleprompter.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="44dp"
+                    android:text="@string/action_prompt"
+                    android:textSize="13sp"
+                    android:layout_marginEnd="8dp"
+                    app:icon="@drawable/ic_play"
+                    app:iconSize="16dp" />
+
+                <!-- Quick Record Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBottomRecord"
+                    style="@style/Widget.Teleprompter.Button.Record"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="44dp"
+                    android:text="@string/action_record"
+                    android:textSize="13sp"
+                    android:layout_marginStart="8dp"
+                    app:icon="@drawable/ic_videocam"
+                    app:iconSize="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+  <!-- Rounded Base Monitor Screen -->
+  <path
+      android:fillColor="#172033"
+      android:strokeColor="#00E5FF"
+      android:strokeWidth="2.5"
+      android:pathData="M8,8h32c2.2,0 4,1.8 4,4v20c0,2.2 -1.8,4 -4,4H8c-2.2,0 -4,-1.8 -4,-4V12c0,-2.2 1.8,-4 4,-4z"/>
+  <!-- Base Stand -->
+  <path
+      android:fillColor="#00E5FF"
+      android:pathData="M22,36h4v4h-4zM16,40h16v2H16z"/>
+  <!-- Camera Aperture Eye -->
+  <path
+      android:fillColor="#00E5FF"
+      android:pathData="M24,13a3,3 0 1,0 0.001,0z"/>
+  <!-- Prompter Text Lines -->
+  <path
+      android:fillColor="#38BDF8"
+      android:pathData="M12,20h24v2H12zM15,24h18v2H15zM18,28h12v2H18z"/>
+</vector>

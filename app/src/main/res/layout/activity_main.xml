@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/midnight_bg"
+    tools:context=".MainActivity">
+
+    <!-- Vertical Container holding TopBar, Fragment Container, and BottomNav -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header Bar -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="64dp"
+            android:background="@color/midnight_surface"
+            app:contentInsetStart="16dp"
+            app:contentInsetEnd="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="56dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_teleprompter_logo" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_tagline"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- Quick Action: Quick Blank Prompter -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnHeaderQuickPrompt"
+                    style="@style/Widget.Teleprompter.Button.Outlined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="@string/action_prompt"
+                    android:textSize="12sp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    app:icon="@drawable/ic_play"
+                    app:iconSize="14dp" />
+            </LinearLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <!-- Main Fragment / Tab Content Container (occupies space between TopBar and BottomNav) -->
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- High-Contrast, Elevated Bottom Navigation Bar -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_nav_bar"
+            app:itemIconTint="@color/bottom_nav_item_color"
+            app:itemTextColor="@color/bottom_nav_item_color"
+            app:itemIconSize="24dp"
+            app:itemActiveIndicatorStyle="@style/ShapeAppearance.Teleprompter.MediumComponent"
+            app:itemRippleColor="@color/electric_blue_glow"
+            app:labelVisibilityMode="labeled"
+            app:elevation="12dp"
+            app:menu="@menu/bottom_nav_menu" />
+
+    </LinearLayout>
+
+    <!-- Floating Action Button for New Script, anchored safely above BottomNav -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabNewScript"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="84dp"
+        android:text="@string/btn_create_script"
+        android:textColor="#001824"
+        android:textStyle="bold"
+        app:backgroundTint="@color/electric_blue"
+        app:icon="@drawable/ic_add"
+        app:iconTint="#001824"
+        app:elevation="8dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

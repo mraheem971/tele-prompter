@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/midnight_border"
+    app:cardBackgroundColor="@color/midnight_surface_card">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Category Badge -->
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_pill_badge_blue"
+            android:textColor="@color/electric_blue"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            tools:text="YouTube"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- More Options Menu Button -->
+        <ImageButton
+            android:id="@+id/btnMoreOptions"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/action_edit"
+            android:src="@drawable/ic_tune"
+            app:tint="@color/text_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Script Title -->
+        <TextView
+            android:id="@+id/tvScriptTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/text_primary"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end"
+            tools:text="Product Launch Keynote Presentation 2026"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCategory" />
+
+        <!-- Content Excerpt Preview -->
+        <TextView
+            android:id="@+id/tvScriptSnippet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            tools:text="Good morning everyone. Today we are officially launching our breakthrough teleprompter platform..."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvScriptTitle" />
+
+        <!-- Stats Pill (Word Count + Estimated Speech Time) -->
+        <LinearLayout
+            android:id="@+id/layoutStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_pill_badge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvScriptSnippet"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_timer"
+                app:tint="@color/electric_cyan" />
+
+            <TextView
+                android:id="@+id/tvWordAndDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                tools:text="340 words • ~2m 30s" />
+        </LinearLayout>
+
+        <!-- Action Button: Teleprompter Reading -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPrompt"
+            style="@style/Widget.Teleprompter.Button.Outlined"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:text="@string/action_prompt"
+            android:textSize="12sp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:icon="@drawable/ic_play"
+            app:iconSize="14dp"
+            app:iconTint="@color/electric_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnRecord"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Action Button: Camera Video Record -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRecord"
+            style="@style/Widget.Teleprompter.Button.Record"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:text="@string/action_record"
+            android:textSize="12sp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:icon="@drawable/ic_videocam"
+            app:iconSize="14dp"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Midnight Dark Theme Colors -->
+    <color name="midnight_bg">#090D16</color>
+    <color name="midnight_surface">#0F172A</color>
+    <color name="midnight_surface_card">#172033</color>
+    <color name="midnight_surface_elevated">#1E293B</color>
+    <color name="midnight_surface_variant">#243047</color>
+    <color name="midnight_border">#2B3952</color>
+
+    <!-- Electric Blue Accents -->
+    <color name="electric_blue">#00E5FF</color>
+    <color name="electric_blue_dark">#00B0FF</color>
+    <color name="electric_blue_glow">#3300E5FF</color>
+    <color name="electric_blue_subtle">#1400E5FF</color>
+    <color name="electric_cyan">#38BDF8</color>
+    <color name="electric_blue_primary">#0284C7</color>
+
+    <!-- Prompter Reading Colors -->
+    <color name="prompter_bg_pure">#000000</color>
+    <color name="prompter_overlay_dark">#B30B0F19</color>
+    <color name="prompter_overlay_medium">#800B0F19</color>
+    <color name="prompter_overlay_light">#4D000000</color>
+    <color name="prompter_text_white">#FFFFFF</color>
+    <color name="prompter_text_yellow">#FFEE58</color>
+    <color name="prompter_text_cyan">#80D8FF</color>
+    <color name="prompter_text_green">#69F0AE</color>
+    <color name="guide_line_color">#00E5FF</color>
+    <color name="guide_line_highlight">#1A00E5FF</color>
+
+    <!-- Status & Functional Colors -->
+    <color name="record_red">#FF2A4D</color>
+    <color name="record_red_glow">#40FF2A4D</color>
+    <color name="success_green">#10B981</color>
+    <color name="warning_amber">#F59E0B</color>
+
+    <!-- Text Colors (Dark Mode) -->
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="text_tertiary">#64748B</color>
+    <color name="text_hint">#475569</color>
+
+    <!-- Light Theme Colors -->
+    <color name="light_bg">#F8FAFC</color>
+    <color name="light_surface">#FFFFFF</color>
+    <color name="light_surface_card">#FFFFFF</color>
+    <color name="light_surface_variant">#F1F5F9</color>
+    <color name="light_border">#E2E8F0</color>
+    <color name="light_text_primary">#0F172A</color>
+    <color name="light_text_secondary">#475569</color>
+    <color name="light_text_tertiary">#94A3B8</color>
+
+    <!-- System Standard -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>
